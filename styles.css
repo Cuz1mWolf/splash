@@ -1,0 +1,133 @@
+/* Additional custom styles */
+.game-card {
+    transition: transform 0.3s ease;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+}
+
+.player-card {
+    transition: all 0.3s ease;
+}
+
+.player-card:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Flip Card Effect */
+.flip-card {
+    perspective: 1000px;
+    height: 300px;
+    cursor: pointer;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.flip-card-front {
+    background-color: white;
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+}
+
+#shieldCard {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    touch-action: none;
+    transition: transform 0.3s ease;
+    z-index: 10;
+}
+
+#roleRevealContainer {
+    overflow: hidden;
+    position: relative;
+}
+
+#roleCard {
+    z-index: 5;
+}
+
+/* Shield slide up styles */
+#shield {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    touch-action: none;
+    transition: transform 0.3s ease;
+}
+
+.transition-none {
+    transition: none !important;
+}
+
+.transition-transform {
+    transition-property: transform;
+}
+
+.duration-500 {
+    transition-duration: 500ms;
+}
+
+.duration-500 {
+    transition-duration: 500ms;
+}
+
+/* Hint animation for shield slide */
+@keyframes hintSlideUp {
+    0% { transform: translateY(0); }
+    25% { transform: translateY(-80px); }
+    50% { transform: translateY(-60px); }
+    75% { transform: translateY(-80px); }
+    100% { transform: translateY(0); }
+}
+
+.hint-slide-up {
+    animation: hintSlideUp 1.5s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.8; }
+}
+
+.animate-pulse {
+    animation: pulse 2s infinite;
+}
